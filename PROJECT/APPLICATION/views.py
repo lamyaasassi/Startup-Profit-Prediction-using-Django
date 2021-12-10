@@ -18,7 +18,7 @@ import math
 def hi(request):
     return render(request, 'APPLICATION/index.html')
 def predict(request):
-    dataset = pd.read_csv('C:/Users/Lamyaa Sassi/Desktop/DjangoProject/DATASET/50_Startups.csv')
+    dataset = pd.read_csv('../DATASET/50_Startups.csv')
     X = dataset.iloc[:, :-1].values
     y = dataset.iloc[:, -1].values
     ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [3])], remainder='passthrough')
